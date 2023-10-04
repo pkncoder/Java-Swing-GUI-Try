@@ -3,6 +3,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import javax.swing.*;
+
 public class HelloSwing extends JFrame
 {
     // Declare instance variables
@@ -20,7 +22,7 @@ public class HelloSwing extends JFrame
         // Create 2 buttons
         JButton clickButton = new JButton("Click Me!");
         JButton cancelButton = new JButton("Cancel");
-
+        
         // Make the overall Pannel
         pannel = new JPanel();
 
@@ -35,8 +37,10 @@ public class HelloSwing extends JFrame
 
     public static void main(String[] args)
     {
+        // Create the object for the plane
         HelloSwing hellowSwingRun = new HelloSwing();
 
+        // Let the program exit
         hellowSwingRun.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         hellowSwingRun.pack();
         hellowSwingRun.setVisible(true);
