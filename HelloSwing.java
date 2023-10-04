@@ -29,6 +29,16 @@ public class HelloSwing extends JFrame
         pannel.add(clickButton);
         pannel.add(cancelButton);
 
-        
+        // Set the content pane?
+        setContentPane(pannel);
+    }
+
+    public static void main(String[] args)
+    {
+        HelloSwing hellowSwingRun = new HelloSwing();
+
+        hellowSwingRun.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        hellowSwingRun.pack();
+        hellowSwingRun.setVisible(true);
     }
 }
