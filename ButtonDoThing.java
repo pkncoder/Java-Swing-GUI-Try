@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 public class ButtonDoThing extends JFrame implements ActionListener
 {
-
+    // Add instance variables
     JButton button;
 
     public void createButton()
