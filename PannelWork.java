@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 public class PannelWork extends JFrame implements ActionListener 
 {
@@ -22,7 +23,11 @@ public class PannelWork extends JFrame implements ActionListener
     static JButton addSeven;
     static JButton addEight;
     static JButton addNine;
+
+    // regular text feild
+    static JTextField sumTextField;
     
+    // The total sum
     static int i = 0;
 
     // No idea how this works, asking my teacher on Monday
@@ -111,6 +116,14 @@ public class PannelWork extends JFrame implements ActionListener
         panBottomKeypad.add(addSeven, BorderLayout.WEST);
         panBottomKeypad.add(addEight, BorderLayout.CENTER);
         panBottomKeypad.add(addNine, BorderLayout.EAST);
+
+        // ------------------------ Text ---------------------- \\
+
+        // Make a text feild
+        sumTextField = new JTextField("Sum: " + i);
+        
+        // Add to panel
+        panBottom.add(sumTextField, BorderLayout.CENTER);
     }
 
     // Add the action listener
@@ -122,54 +135,63 @@ public class PannelWork extends JFrame implements ActionListener
             // Add one every time we click the button, starts at 0 so fist click prints 1
             i += 1;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addTwo)
         {
             // Add two every time, print
             i += 2;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addThree)
         {
             // Add three every time, print
             i += 3;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addFour)
         {
             // Add four every time, print
             i += 4;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addFive)
         {
             // Add five every time, print
             i += 5;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addSix)
         {
             // Add six every time, print
             i += 6;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addSeven)
         {
             // Add seven every time, print
             i += 7;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addEight)
         {
             // Add eight every time, print
             i += 8;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
         else if (e.getSource() == addNine)
         {
             // Add nine every time, print
             i += 9;
             System.out.println(i);
+            sumTextField.setText("Sum: " + i);
         }
     }
 
