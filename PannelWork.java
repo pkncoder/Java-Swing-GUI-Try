@@ -217,7 +217,7 @@ public class PannelWork extends JFrame implements ActionListener
             {
                 // Changes everything to '-'
                 operation = "-";
-                operationChange.setText("-");
+                operationChange.setText("+");
 
                 // Reset the text
                 addOne.setText(operation + "1");
@@ -236,7 +236,7 @@ public class PannelWork extends JFrame implements ActionListener
             {
                 // Changes everything to '+'
                 operation = "+";
-                operationChange.setText("+");
+                operationChange.setText("-");
 
                 // Reset the text
                 addOne.setText(operation + "1");
