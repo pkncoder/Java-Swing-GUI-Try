@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 
 public class PannelWork extends JFrame implements ActionListener 
 {
-
     // Add instances of these variables that the action listener will use
     static JButton addOne;
     static JButton addTwo;
@@ -38,9 +37,12 @@ public class PannelWork extends JFrame implements ActionListener
         // ---------------- Panel ----------------- \\
 
         // Create the pannel we will use, also add the size it will be
+        // Part of the keypads
         JPanel panTopKeypad = new JPanel();
         JPanel panCenterKeypad = new JPanel();
         JPanel panBottomKeypad = new JPanel();
+
+        // Generic panels for other things to go on besides keypads
         JPanel centerEncaplsePanel = new JPanel();
         JPanel panBottom = new JPanel();
 
@@ -61,6 +63,8 @@ public class PannelWork extends JFrame implements ActionListener
         panTopKeypad.setBackground(Color.red);
         panCenterKeypad.setBackground(Color.red);
         panBottomKeypad.setBackground(Color.red);
+
+        // The green means not keypad
         centerEncaplsePanel.setBackground(Color.green);
         panBottom.setBackground(Color.green);
 
@@ -68,6 +72,8 @@ public class PannelWork extends JFrame implements ActionListener
         this.add(panBottom, BorderLayout.SOUTH);
         this.add(centerEncaplsePanel, BorderLayout.CENTER);
         this.add(panTopKeypad, BorderLayout.NORTH);
+
+        // Adding the the centerEncaplsePanel so we can format the calc better
         centerEncaplsePanel.add(panCenterKeypad, BorderLayout.NORTH);
         centerEncaplsePanel.add(panBottomKeypad, BorderLayout.CENTER);
 
@@ -125,43 +131,43 @@ public class PannelWork extends JFrame implements ActionListener
         }
         else if (e.getSource() == addThree)
         {
-            // Add two every time, print
+            // Add three every time, print
             i += 3;
             System.out.println(i);
         }
         else if (e.getSource() == addFour)
         {
-            // Add two every time, print
+            // Add four every time, print
             i += 4;
             System.out.println(i);
         }
         else if (e.getSource() == addFive)
         {
-            // Add two every time, print
+            // Add five every time, print
             i += 5;
             System.out.println(i);
         }
         else if (e.getSource() == addSix)
         {
-            // Add two every time, print
+            // Add six every time, print
             i += 6;
             System.out.println(i);
         }
         else if (e.getSource() == addSeven)
         {
-            // Add two every time, print
+            // Add seven every time, print
             i += 7;
             System.out.println(i);
         }
         else if (e.getSource() == addEight)
         {
-            // Add two every time, print
+            // Add eight every time, print
             i += 8;
             System.out.println(i);
         }
         else if (e.getSource() == addNine)
         {
-            // Add two every time, print
+            // Add nine every time, print
             i += 9;
             System.out.println(i);
         }
