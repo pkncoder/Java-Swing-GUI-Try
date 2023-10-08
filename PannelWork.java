@@ -36,10 +36,14 @@ public class PannelWork extends JFrame implements ActionListener
     // The total sum
     static int i = 0;
 
+    // What operation is going on at the time
+    static String operation = "+";
+
     // No idea how this works, asking my teacher on Monday
     PannelWork ()
     {
         // Set the starting stuff
+        this.setTitle("Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setLayout(new BorderLayout());
@@ -92,15 +96,15 @@ public class PannelWork extends JFrame implements ActionListener
         
         // Create a button that will just add one to a variable
         // Change sum buttons
-        addOne = new JButton("+1");
-        addTwo = new JButton("+2");
-        addThree = new JButton("+3");
-        addFour = new JButton("+4");
-        addFive = new JButton("+5");
-        addSix = new JButton("+6");
-        addSeven = new JButton("+7");
-        addEight = new JButton("+8");
-        addNine = new JButton("+9");
+        addOne = new JButton(operation + "1");
+        addTwo = new JButton(operation + "2");
+        addThree = new JButton(operation + "3");
+        addFour = new JButton(operation + "4");
+        addFive = new JButton(operation + "5");
+        addSix = new JButton(operation + "6");
+        addSeven = new JButton(operation + "7");
+        addEight = new JButton(operation + "8");
+        addNine = new JButton(operation + "9");
 
         // Change operations button
         operationChange = new JButton("-");
@@ -119,6 +123,7 @@ public class PannelWork extends JFrame implements ActionListener
         addEight.addActionListener(this);
         addNine.addActionListener(this);
         clearButton.addActionListener(this);
+        operationChange.addActionListener(this);
         
         // Add the button to our panel, the center of it
         panTopKeypad.add(addOne, BorderLayout.WEST);
@@ -153,47 +158,47 @@ public class PannelWork extends JFrame implements ActionListener
         if (e.getSource() == addOne) 
         {
             // Add one every time we click the button, starts at 0 so fist click prints 1
-            i = sumValueChange(i, 1, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "1"), sumTextField);
         }
         else if (e.getSource() == addTwo)
         {
             // Add two every time, print
-            i = sumValueChange(i, 2, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "2"), sumTextField);
         }
         else if (e.getSource() == addThree)
         {
             // Add three every time, print
-            i = sumValueChange(i, 3, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "3"), sumTextField);
         }
         else if (e.getSource() == addFour)
         {
             // Add four every time, print
-            i = sumValueChange(i, 4, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "4"), sumTextField);
         }
         else if (e.getSource() == addFive)
         {
             // Add five every time, print
-            i = sumValueChange(i, 5, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "5"), sumTextField);
         }
         else if (e.getSource() == addSix)
         {
             // Add six every time, print
-            i = sumValueChange(i, 6, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "6"), sumTextField);
         }
         else if (e.getSource() == addSeven)
         {
             // Add seven every time, print
-            i = sumValueChange(i, 7, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "7"), sumTextField);
         }
         else if (e.getSource() == addEight)
         {
             // Add eight every time, print
-            i = sumValueChange(i, 8, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "8"), sumTextField);
         }
         else if (e.getSource() == addNine)
         {
             // Add nine every time, print
-            i = sumValueChange(i, 9, sumTextField);
+            i = sumValueChange(i, Integer.valueOf(operation + "9"), sumTextField);
         }
 
         // Clear button
@@ -202,6 +207,48 @@ public class PannelWork extends JFrame implements ActionListener
             // Reset i back to 0
             i = 0;
             sumTextField.setText("Sum: 0");
+        }
+
+        // Operation change button
+        if (e.getSource() == operationChange)
+        {
+            // If '+' swap to '-'
+            if (operation == "+")
+            {
+                // Changes everything to '-'
+                operation = "-";
+                operationChange.setText("-");
+
+                // Reset the text
+                addOne.setText(operation + "1");
+                addTwo.setText(operation + "2");
+                addThree.setText(operation + "3");
+                addFour.setText(operation + "4");
+                addFive.setText(operation + "5");
+                addSix.setText(operation + "6");
+                addSeven.setText(operation + "7");
+                addEight.setText(operation + "8");
+                addNine.setText(operation + "9");
+            }
+
+            // If '-' swap to '+'
+            else if (operation == "-")
+            {
+                // Changes everything to '+'
+                operation = "+";
+                operationChange.setText("+");
+
+                // Reset the text
+                addOne.setText(operation + "1");
+                addTwo.setText(operation + "2");
+                addThree.setText(operation + "3");
+                addFour.setText(operation + "4");
+                addFive.setText(operation + "5");
+                addSix.setText(operation + "6");
+                addSeven.setText(operation + "7");
+                addEight.setText(operation + "8");
+                addNine.setText(operation + "9");
+            }
         }
     }
 
